@@ -67,6 +67,7 @@ function main() {
         const zackyAccount = new BankAccount("Zacky");
         const anggaraAccount = new BankAccount("Anggara");
 
+        console.log("============== CASE 1 ==============");
         // CASE 1: cannot deposit or withdraw negative amount
         // these calls shouldn't work
         zackyAccount.deposit(-100_000);
@@ -78,6 +79,7 @@ function main() {
         console.log(Utils.formatIDR(zackyAccount.getBalance()));
         // zackyAccount balance: 50.000
 
+        console.log("============== CASE 2 ==============");
         // CASE 2: cannot withdraw amount larger that current balance
         // this should fail
         zackyAccount.withdraw(60_000);
@@ -87,13 +89,14 @@ function main() {
         zackyAccount.withdraw(10_000);
         console.log(Utils.formatIDR(zackyAccount.getBalance()));
 
+        console.log("============== CASE 3 ==============");
         // CASE 3: transfers w/ validation
         // this should fail
         zackyAccount.transfer(55_000, anggaraAccount);
         console.log("Zacky:", Utils.formatIDR(zackyAccount.getBalance()));
         console.log("Anggara: ", Utils.formatIDR(anggaraAccount.getBalance()));
 
-        // this should succees
+        // this should succeed
         zackyAccount.transfer(25_000, anggaraAccount);
         console.log("Zacky:", Utils.formatIDR(zackyAccount.getBalance()));
         console.log("Anggara: ", Utils.formatIDR(anggaraAccount.getBalance()));
