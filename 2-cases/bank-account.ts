@@ -79,7 +79,12 @@ function main() {
         // zackyAccount balance: 50.000
 
         // CASE 2: cannot withdraw amount larger that current balance
+        // this should fail
         zackyAccount.withdraw(60_000);
+        console.log(Utils.formatIDR(zackyAccount.getBalance()));
+
+        // this should succeed
+        zackyAccount.withdraw(10_000);
         console.log(Utils.formatIDR(zackyAccount.getBalance()));
 
         // CASE 3: transfers w/ validation
