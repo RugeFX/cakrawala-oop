@@ -9,18 +9,15 @@ class NotificationMain {
   public constructor(public message: string) {}
 
   public useSMS(phoneNumber: string): void {
-    const smsNotification = new SMSNotification(phoneNumber, this.message);
-    this.notification = smsNotification;
+    this.notification = new SMSNotification(phoneNumber, this.message);
   }
 
   public useEmail(recipient: string): void {
-    const emailNotification = new EmailNotification(recipient, this.message);
-    this.notification = emailNotification;
+    this.notification = new EmailNotification(recipient, this.message);
   }
 
   public usePush(deviceToken: string): void {
-    const pushNotification = new PushNotification(deviceToken, this.message);
-    this.notification = pushNotification;
+    this.notification = new PushNotification(deviceToken, this.message);
   }
 
   public sendNotification(): void {
