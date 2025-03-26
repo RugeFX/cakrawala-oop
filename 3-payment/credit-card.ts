@@ -12,7 +12,7 @@ export class CreditCard extends Payment {
     super(amount, date);
   }
 
-  protected validatePayment(): string {
+  protected override validatePayment(): string {
     if (this.cardNumber.length < 15) return "Invalid card number";
     if (!this.cardHolderName.trim()) return "Invalid card holder name";
     if (!this.expiryDate.trim()) return "Invalid expiry date";
@@ -26,7 +26,7 @@ export class CreditCard extends Payment {
     return super.validatePayment();
   }
 
-  public processPayment(): void {
+  public override processPayment(): void {
     const validate = this.validatePayment();
 
     if (validate !== "Valid") {
@@ -42,7 +42,7 @@ export class CreditCard extends Payment {
     );
   }
 
-  public refundPayment(): void {
+  public override refundPayment(): void {
     if (this.status !== PaymentStatus.SUCCESSFUL)
       return console.error("Cannot refund a payment that was not successful");
 
