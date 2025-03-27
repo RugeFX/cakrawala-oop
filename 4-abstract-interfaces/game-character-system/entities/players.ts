@@ -3,7 +3,7 @@ import type { Defend, HealOther } from "../core/interfaces";
 
 export class Mage extends Player implements HealOther {
   public constructor(name: string) {
-    super(name, 80, 10, 50);
+    super(name, 80, 10, 60);
   }
 
   public heal(): void {
@@ -59,7 +59,7 @@ export class Warrior extends Player {
 
 export class Healer extends Player implements HealOther {
   public constructor(name: string) {
-    super(name, 30, 25, 50);
+    super(name, 30, 25, 65);
   }
 
   public heal(): void {

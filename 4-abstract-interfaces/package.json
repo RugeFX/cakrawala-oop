@@ -3,7 +3,8 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "run:notification": "tsx ./notification-interface/index.ts"
+    "run:notification": "tsx ./notification-interface/index.ts",
+    "run:game": "tsx ./game-character-system/index.ts"
   },
   "private": true,
   "devDependencies": {
